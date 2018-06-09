@@ -1,0 +1,26 @@
+{
+  "name": "costume-shop-complex-api",
+  "version": "1.0.0",
+  "description": "Scratch-built complex API with create, read, update and delete routes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenjaminBr0ad/costume-shop-complex-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenjaminBr0ad/costume-shop-complex-api/issues"
+  },
+  "homepage": "https://github.com/BenjaminBr0ad/costume-shop-complex-api#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "uuid": "^3.2.1"
+  }
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "040f873d-df27-4f5c-8161-25ac0357ea35",
+    "name": "cowboy costume",
+    "price": 59.99,
+    "description": "theres a snake in my boot",
+    "tags": [
+      {
+        "id": "a60ef22f-e3e6-47c6-9171-33848a63fa50",
+        "name": "hat",
+        "color": "#7ddbb3"
+      },
+      {
+        "id": "a600d137-9362-4636-ad56-be45a5c19816",
+        "name": "boots",
+        "color": "#713f45"
+      }
+    ]
+  },
+  {
+    "id": "2d307188-0073-4d36-8f30-74e4efc687a4",
+    "name": "astronaut costume",
+    "price": 89.99,
+    "description": "to infinity and beyond",
+    "tags": [
+      {
+        "id": "c8e4c548-f66e-4976-a158-7752ead05bff",
+        "name": "space helmet",
+        "color": "#6c8052"
+      },
+      {
+        "id": "e3adda3f-2536-4b6d-9a5a-de81f5f50129",
+        "name": "robot pants",
+        "color": "#e7730c"
+      }
+    ]
+  },
+  {
+    "id": "23f3b017-d222-4b02-b246-8cc5cf9a559a",
+    "name": "tyrannosaurus rex costume",
+    "price": 109.99,
+    "description": "can somebody cover my eyes",
+    "tags": [
+      {
+        "id": "5e44b01b-885e-47eb-ad32-bcc22682a065",
+        "name": "t-rex head",
+        "color": "#84a8c2"
+      },
+      {
+        "id": "ccada36-2de9-4ac4-944a-467a02572b6a",
+        "name": "t-rex tail",
+        "color": "#96a4ee"
+      }
+    ]
+  }
+]
