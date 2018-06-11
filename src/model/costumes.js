@@ -51,20 +51,21 @@ function getTag (id, tagid) {
   return response
 }
 
-function addCostume (id, name, price, desc, tags) {
+function addCostume (name, price, desc, tags) {
   const errors = []
-  const costume = model.find(costume => costume.id === id)
 
   let response
-  if (!id || !name || !price || !tags) {
-    errors.push(`Please include the following fields: id, name, price, tags`)
-    response = { errors }
-  } else if (costume) {
-    errors.push(`A costume with that id already exists`)
+  if (!name || !price || !tags) {
+    errors.push(`Please include the following fields: name, price, tags`)
     response = { errors }
   } else {
     const newId = uuid()
-    const newCostume = {newId, name, price, desc, tags}
+    const tagsArray = []
+    for (let elem of tags) {
+      const newTagId = uuid()
+      tagsArray.push({"id": newTagId, "name": elem.name, "color": elem.color})
+    }
+    const newCostume = {"id": newId, "name": name, "price": price, "description": desc, "tags": tagsArray}
     model.push(newCostume)
     response = newCostume
   }
@@ -84,7 +85,7 @@ function addTag (id, name, color) {
     response = { errors }
   } else {
     const newId = uuid()
-    const newTag = {id: newId, name: name, color: color}
+    const newTag = {"id": newId, "name": name, "color": color}
     costume.tags.push(newTag)
     response = newTag
   }
@@ -100,10 +101,15 @@ function updateCostume (id, name, price, desc, tags) {
     errors.push(`Could not find a costume with id: ${id}`)
     response = { errors }
   } else {
+    const tagsArray = []
+    for (let elem of tags) {
+      const newTagId = uuid()
+      tagsArray.push({"id": newTagId, "name": elem.name, "color": elem.color})
+    }
     costume.name = name
     costume.price = price
-    costume.desc = desc
-    costume.tags = tags
+    costume.description = desc
+    costume.tags = tagsArray
     response = costume
   }
   return response
@@ -156,9 +162,9 @@ function deleteTag (id, tagid) {
     errors.push(`Could not find a tag with id ${tagid}`)
     response = { errors }
   } else {
-    const index = costume.tags.indexOf(costume)
+    const index = costume.tags.indexOf(costumeTag)
     costume.tags.splice(index, 1)
-    response = `Tag with id ${tagid} deleted from costume with id ${id}`
+    response = `Tag with id ${tagid} deleted from costume: ${costume.name}`
   }
   return response
 }

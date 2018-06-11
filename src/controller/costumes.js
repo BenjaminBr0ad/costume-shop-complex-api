@@ -45,7 +45,7 @@ function getTag (req, res, next) {
 }
 
 function addCostume (req, res, next) {
-  const newCostume = model.addCostume(req.body.id, req.body.name, req.body.price, req.body.description, req.body.tags)
+  const newCostume = model.addCostume(req.body.name, req.body.price, req.body.description, req.body.tags)
 
   if (newCostume.errors) {
     return next({
@@ -71,7 +71,7 @@ function addTag (req, res, next) {
 }
 
 function updateCostume (req, res, next) {
-  const updatedCostume = model.updateCostume(req.body.id, req.body.name, req.body.price, req.body.description, req.body.tags)
+  const updatedCostume = model.updateCostume(req.params.id, req.body.name, req.body.price, req.body.description, req.body.tags)
 
   if (updatedCostume.errors) {
     return next({
@@ -84,7 +84,7 @@ function updateCostume (req, res, next) {
 }
 
 function updateTag (req, res, next) {
-  const updatedTag = model.updateTag(req.params.id, req.body.id, req.body.name, req.body.color)
+  const updatedTag = model.updateTag(req.params.id, req.params.tagid, req.body.name, req.body.color)
 
   if (updatedTag.errors) {
     return next({
@@ -97,7 +97,7 @@ function updateTag (req, res, next) {
 }
 
 function deleteCostume (req, res, next) {
-  const deletedCostume = model.deleteCostume(req.body.id)
+  const deletedCostume = model.deleteCostume(req.params.id)
 
   if (deletedCostume.errors) {
     return next({
@@ -110,7 +110,7 @@ function deleteCostume (req, res, next) {
 }
 
 function deleteTag (req, res, next) {
-  const deletedTag = model.deleteTag(req.params.id, req.body.id)
+  const deletedTag = model.deleteTag(req.params.id, req.params.tagid)
 
   if (deletedTag.errors) {
     return next({

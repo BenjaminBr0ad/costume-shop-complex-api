@@ -14,6 +14,6 @@ router.put('/costumes/:id', ctrl.updateCostume)
 router.put('/costumes/:id/tags/:tagid', ctrl.updateTag)
 
 router.delete('/costumes/:id', ctrl.deleteCostume)
-router.delete('/costumes/:id/tags/:tagid', ctrl.deleteCostume)
+router.delete('/costumes/:id/tags/:tagid', ctrl.deleteTag)
 
 module.exports = router
